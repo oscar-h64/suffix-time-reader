@@ -13,4 +13,4 @@ module Data.Time.AbsoluteRead (
 
 -- An instance of this typeclass can be read
 class ReadAbsoluteTime a where
-    readAbsoluteTime :: String -> a
+    readAbsoluteTime :: String -> Maybe a
