@@ -1,3 +1,3 @@
-# Changelog for absolute-time-reader
+# Changelog for suffix-time-reader
 
 ## Unreleased changes
