@@ -1,5 +1,7 @@
 # suffix-time-reader
 
+![Haskell CI](https://github.com/oscar-h64/suffix-time-reader/workflows/Haskell%20CI/badge.svg)
+
 This is a work in progress.
 
 This library provides a single module `Data.Time.SuffixRead` which contains a typeclass `ReadSuffixTime`. This typeclass has a single function:
