@@ -41,3 +41,4 @@ tests:
     - suffix-time-reader
     - tasty
     - tasty-quickcheck
+    - time
