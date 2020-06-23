@@ -35,6 +35,14 @@ tests = localOption (Timeout (5*1000000) "5s") $ testGroup "Data.Time.SuffixRead
             \(x :: Integer) -> (readSuffixTime (show x ++ "h") :: Maybe DiffTime) === Just (secondsToDiffTime $ x * 3600)
     ,   testProperty "reads days to DiffTime correctly" $ 
             \(x :: Integer) -> (readSuffixTime (show x ++ "d") :: Maybe DiffTime) === Just (secondsToDiffTime $ x * 86400)
+    ,   testProperty "reads seconds to NominalDiffTime correctly" $ 
+            \(x :: Integer) -> (readSuffixTime (show x ++ "s") :: Maybe NominalDiffTime) === Just (secondsToNominalDiffTime $ fromIntegral x)
+    ,   testProperty "reads minutes to NominalDiffTime correctly" $ 
+            \(x :: Integer) -> (readSuffixTime (show x ++ "m") :: Maybe NominalDiffTime) === Just (secondsToNominalDiffTime $ fromIntegral $ x * 60)
+    ,   testProperty "reads hours to NominalDiffTime correctly" $ 
+            \(x :: Integer) -> (readSuffixTime (show x ++ "h") :: Maybe NominalDiffTime) === Just (secondsToNominalDiffTime $ fromIntegral $ x * 3600)
+    ,   testProperty "reads days to NominalDiffTime correctly" $ 
+            \(x :: Integer) -> (readSuffixTime (show x ++ "d") :: Maybe NominalDiffTime) === Just (secondsToNominalDiffTime $ fromIntegral $ x * 86400)
     ]
 
 main :: IO ()
