@@ -33,10 +33,11 @@ splitEnd ls  = pure $ runWriter $ splitEnd' ls
         splitEnd' [x]    = pure x
         splitEnd' (x:xs) = tell [x] >> splitEnd' xs
 
--- An instance of this typeclass can be read
+-- An instance of this typeclass can be read to
 class ReadSuffixTime a where
     readSuffixTime :: String -> Maybe a
 
+-- This instance reads to an Int representing the number of seconds
 instance ReadSuffixTime Int where
     readSuffixTime s = do
         (lastElem, initElems) <- splitEnd s
