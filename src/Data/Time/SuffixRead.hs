@@ -38,9 +38,9 @@ class ReadSuffixTime a where
     readSuffixTime :: String -> Maybe a
 
 -- This instance reads to an Int representing the number of seconds
-instance ReadSuffixTime Int where
+instance Num a => ReadSuffixTime a where
     readSuffixTime s = do
         (lastElem, initElems) <- splitEnd s
         num <- readMaybe initElems
         mult <- lookup lastElem timeMults
-        pure $ num * mult
+        pure $ fromIntegral $ num * mult

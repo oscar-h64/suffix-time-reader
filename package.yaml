@@ -1,5 +1,5 @@
 name:                suffix-time-reader
-version:             0.1.0
+version:             0.1.1
 github:              "oscar-h64/suffix-time-reader"
 license:             BSD3
 author:              "Oscar Harris"
@@ -25,6 +25,9 @@ dependencies:
 
 library:
   source-dirs: src
+  default-extensions:
+  - FlexibleInstances
+  - UndecidableInstances
 
 tests:
   absolute-time-reader-test:
